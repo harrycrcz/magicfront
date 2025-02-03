@@ -1,87 +1,89 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #8e44ad;
+    --bg-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #f8f8f8;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 
-header {
-    background-color: #5d3fd3;
-    color: white;
-    padding: 20px;
-}
-
-nav ul {
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem;
     display: flex;
-    justify-content: center;
-    list-style: none;
-    background-color: #4b2c96;
-    padding: 10px;
+    justify-content: space-between;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
+.nav-links a {
     color: white;
     text-decoration: none;
+    margin: 0 1rem;
 }
 
-.intro,
-.services,
-.form-container {
-    margin: 20px;
+.hero {
+    padding: 3rem;
+    background: var(--secondary-color);
+    color: white;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.hero-buttons {
+    margin-top: 1rem;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .service-card {
-    background-color: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background: var(--card-bg);
+    padding: 1rem;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-form {
-    background-color: white;
-    padding: 20px;
-    margin: auto;
-    max-width: 400px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-input,
-textarea {
+.service-card img {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-button {
-    background-color: #5d3fd3;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.signup-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    width: 300px;
+    margin: auto;
+    border-radius: 8px;
 }
 
 footer {
-    margin-top: 20px;
-    background-color: #4b2c96;
+    background: var(--primary-color);
     color: white;
-    padding: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
 }
