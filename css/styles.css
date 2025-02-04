@@ -1,6 +1,7 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #8e44ad;
+    --accent-color: #f1c40f;
     --bg-color: #ecf0f1;
     --text-color: #2c3e50;
     --card-bg: #ffffff;
@@ -10,80 +11,138 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
     color: var(--text-color);
-    text-align: center;
+    background-color: var(--bg-color);
 }
 
+/* --- Navbar --- */
 .navbar {
     background-color: var(--primary-color);
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a.active {
+    background-color: var(--secondary-color);
+}
+
+/* --- Hero Section (Index) --- */
 .hero {
-    padding: 3rem;
-    background: var(--secondary-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/* --- Evitar que el título y botones se reduzcan demasiado --- */
+.hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
 }
 
 .hero-buttons {
-    margin-top: 1rem;
-}
-
-.btn {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.container {
-    padding: 2rem;
-}
-
-.services-grid {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
-    gap: 2rem;
 }
 
-.service-card {
-    background: var(--card-bg);
-    padding: 1rem;
-    width: 250px;
-    border-radius: 8px;
+.hero-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    min-width: 150px;
     text-align: center;
 }
 
-.service-card img {
-    width: 100%;
-    border-radius: 8px;
+/* --- Services Page --- */
+.services h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
 }
 
-.signup-form {
-    background: var(--card-bg);
+.providers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* --- Evitar que las tarjetas de servicio se reduzcan demasiado --- */
+.service-card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    padding: 1.5rem;
+}
+
+/* --- Signup Page --- */
+.join-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
+}
+
+/* --- Evitar que el formulario y sus campos sean demasiado pequeños --- */
+.join-form {
+    max-width: 500px;
+    min-width: 300px;
     padding: 2rem;
-    width: 300px;
-    margin: auto;
-    border-radius: 8px;
 }
 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    min-width: 280px;
+}
+
+/* --- Footer --- */
 footer {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: white;
+    text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        margin: 0;
+    }
 }
